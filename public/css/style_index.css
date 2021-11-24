@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: #f69679;
+}
+
+.main {
+    font-size: 200%;
+}
+
+.home {
+    text-align: center;
+    font-size: 30px;
+}
+
+body {
+    background-color: #eddbcd;
+    background-image: url(/images/home_image.jpg);
+}

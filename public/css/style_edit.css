@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body {
+    background-color: #eddbcd;
+    background-image: url(/images/home_image.jpg);
+}
+
+.main {
+    margin-left: 100px;
+}

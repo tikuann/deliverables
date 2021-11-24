@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.list {
+    margin-left: 100px;
+}
+
+body {
+    background-color: #eddbcd;
+    background-image: url(/images/home_image.jpg);
+}
+.title {
+    font-size: 30px;
+}
+.material {
+    font-size: 20px;
+}
