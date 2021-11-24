@@ -8,6 +8,9 @@
         <link rel="stylesheet" href= "{{('/css/style_recipe.css')}}">
     </head>
     <body>
+        @extends('layouts.app')
+        @section('content')
+        {{Auth::user()->name}}
         <header class='header'>
         <h1>晩御飯、なんでもいいや・・・</h1>
         </header>
@@ -24,5 +27,6 @@
             @endforeach
         </div>
         [<a href='/create'>create</a>]
+        @endsection
     </body>
 </html>

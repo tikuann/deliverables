@@ -8,6 +8,9 @@
          <title>晩御飯</title>
     </head>
     <body>
+        @extends('layouts.app')
+        @section('content')
+        {{Auth::user()->name}}
         <header class="header">
             <h1>晩御飯、なんでもいいや..</h1>
             <ul class="main">
@@ -30,5 +33,6 @@
             [<a href='/recipe/{{ $egg->id }}'>玉子系</a>]
         </div>
     [<a href='/create'>create</a>]
+    @endsection
     </body>
 </html>

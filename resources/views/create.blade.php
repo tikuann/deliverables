@@ -8,6 +8,9 @@
                <link rel="stylesheet" href="{{('/css/style_create.css')}}">
     </head>
     <body>
+        @extends('layouts.app')
+        @section('content')
+        {{Auth::user()->name}}
         <h1>晩御飯、なんでもいいや・・・</h1>
         <div class='create'>
             <form action="/recuoe" method="POST">
@@ -47,5 +50,6 @@
             </form>
             <div class="back">[<a href="/list">back</a>]</div>
         </div>
+        @endsection
     </body>
 </html>

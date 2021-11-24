@@ -9,6 +9,9 @@
         <link rel="stylesheet" href="{{('/css/style_show.css')}}">   
         </head>
     <body>
+        @extends('layouts.app')
+        @section('content')
+        {{Auth::user()->name}}
         <div class='main'>
         <h1 class="title">
             {{ $recipe->title }}
@@ -39,5 +42,6 @@
             <a href="/">戻る</a>
         </div>
         </div>
+        @endsection
     </body>
 </html>

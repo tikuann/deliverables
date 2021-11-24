@@ -8,6 +8,9 @@
                 <link rel="stylesheet" href="{{('/css/style_edit.css')}}"> 
     </head>
 <body>
+    @extends('layouts.app')
+    @section('content')
+    {{Auth::user()->name}}
     <div class='main'>
     <h1 class="title">編集画面</h1>
     <div class="content">
@@ -34,4 +37,5 @@
         </form>
     </div>
     </div>
+    @endsection
 </body>
