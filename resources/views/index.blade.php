@@ -26,13 +26,15 @@
             <p class='body3'>おすすめの晩御飯レシピを紹介します。</p>
         </div>
         <div class='meat'>
+            <div class='container'>
             [<a href='/recipe/{{ $meat->id }}'>肉</a>]
             [<a href='/recipe/{{ $fish->id }}'>魚</a>]
             [<a href='/recipe/{{ $vegetable->id }}'>野菜</a>]
             [<a href='/recipe/{{ $noodles->id }}'>麺類</a>]
             [<a href='/recipe/{{ $egg->id }}'>玉子系</a>]
+            </div>
         </div>
-    [<a href='/create'>create</a>]
-    @endsection
+   　　  [<a href='/create'>create</a>] 
+   　　  @endsection
     </body>
 </html>
