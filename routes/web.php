@@ -17,3 +17,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/line/callback',    'LineApiController@postWebhook');
 // line メッセージ送信用
 Route::get('/line/message/send', 'LineApiController@sendMessage');
+    
