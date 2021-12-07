@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// line webhook受取用
+Route::post('/line/callback',    'LineApiController@postWebhook');
+// line メッセージ送信用
+Route::get('/line/message/send', 'LineApiController@sendMessage');
+

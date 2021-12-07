@@ -12,3 +12,8 @@ Route::post('/recuoe', 'RecipeController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// line webhook受取用
+Route::post('/line/callback',    'LineApiController@postWebhook');
+// line メッセージ送信用
+Route::get('/line/message/send', 'LineApiController@sendMessage');
