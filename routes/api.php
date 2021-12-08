@@ -13,8 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-// line webhook受取用
-Route::post('/line/callback',    'LineApiController@postWebhook');
-// line メッセージ送信用
-Route::get('/line/message/send', 'LineApiController@sendMessage');
-
+// LINE メッセージ受信
+Route::post('/line/webhook', 'LineMessengerController@webhook')->name('line.webhook');
+ 
+// LINE メッセージ送信用
+Route::get('/line/message', 'LineMessengerController@message');
+    
