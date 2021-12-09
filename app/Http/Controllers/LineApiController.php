@@ -21,9 +21,24 @@ class LineApiController extends Controller
         // :point_down: チャンネルシークレット
         $this->channel_secret = env('LINE_CHANNEL_SECRET');
     }
-    
-    public function webhook(Request $request) {
+            // メッセージ送信用
+    public function webhook() {
+ 
+        // LINEBOTSDKの設定
+        $http_client = new CurlHTTPClient(config('services.line.channel_token'));
+        $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
+ 
+        // LINEユーザーID指定
+        $userId = "LINEユーザーID";
+ 
+        // メッセージ設定
+        $message = "こんにちは！";
+ 
+        // メッセージ送信
+        $textMessageBuilder = new TextMessageBuilder($message);
+        $response    = $bot->pushMessage($userId, $textMessageBuilder);
+ 
+    }
 }
 
-}
 
