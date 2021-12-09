@@ -9,7 +9,7 @@ use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
  
 use Illuminate\Http\Request;
  
-class LineMessengerController extends Controller
+class LineApiController extends Controller
 {
     protected $access_token;
     protected $channel_secret;

@@ -4,8 +4,8 @@ use Illuminate\Http\Request;
 
 
 // LINE メッセージ受信
-Route::post('/line/webhook', 'LineMessengerController@webhook');
+Route::post('/line/webhook', 'LineApi@webhook');
  
 // LINE メッセージ送信用
-Route::post('/line/message', 'LineMessengerController@message');
+Route::post('/line/message', 'LineApi@message');
     
