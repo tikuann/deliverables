@@ -1,4 +1,10 @@
 <?php
+// LINE メッセージ受信
+Route::post('/line/webhook', 'LineMessengerController@webhook')->name('line.webhook');
+ 
+// LINE メッセージ送信用
+Route::get('/line/message', 'LineMessengerController@message');
+    
 Route::group(['middleware' => 'auth'], function(){
 Route::get('/', 'RecipeController@index');
 Route::get('/create', 'RecipeController@create');
@@ -13,10 +19,3 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-
-// LINE メッセージ受信
-Route::post('/line/webhook', 'LineMessengerController@webhook')->name('line.webhook');
- 
-// LINE メッセージ送信用
-Route::get('/line/message', 'LineMessengerController@message');
-    
