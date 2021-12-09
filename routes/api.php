@@ -17,5 +17,5 @@ use Illuminate\Http\Request;
 Route::post('/line/webhook', 'LineMessengerController@webhook')->name('line.webhook');
  
 // LINE メッセージ送信用
-Route::get('/line/message', 'LineMessengerController@message');
+Route::post('/line/message', 'LineMessengerController@message');
     
