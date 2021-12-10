@@ -6,7 +6,7 @@ use LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use LINE\LINEBot;
 use App\Models\User;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
- 
+use APP\LineFrend;
 use Illuminate\Http\Request;
  
 class LineApiController extends Controller
@@ -24,21 +24,10 @@ class LineApiController extends Controller
             // メッセージ送信用
     public function webhook() {
  
-        // LINEBOTSDKの設定
-        $http_client = new CurlHTTPClient(config('services.line.channel_token'));
-        $bot = new LINEBot($http_client, ['channelSecret' => config('services.line.messenger_secret')]);
+        $inputs=$request->all();
  
-        // LINEユーザーID指定
-        $userId = "LINEユーザーID";
- 
-        // メッセージ設定
-        $message = "こんにちは！";
- 
-        // メッセージ送信
-        $textMessageBuilder = new TextMessageBuilder($message);
-        $response    = $bot->pushMessage($userId, $textMessageBuilder);
- 
-    }
+        // そこからtypeをとりだし、$message_typeに代入
+        $message_type=$inputs['events'][0]['type'];
 }
 
-
+}
