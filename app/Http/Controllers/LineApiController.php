@@ -26,8 +26,7 @@ class LineApiController extends Controller
  
         $inputs=$request->all();
  
-        // そこからtypeをとりだし、$message_typeに代入
-        $message_type=$inputs['events'][0]['type'];
+
 }
 
 }
