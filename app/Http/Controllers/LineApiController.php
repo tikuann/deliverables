@@ -13,7 +13,7 @@ class LineApiController extends Controller
 {
     // メッセージ送信用
     public function webhook() {
-        return 'ok';
+        $inputs=$request->all();
  
 
 }
