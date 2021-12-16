@@ -8,6 +8,7 @@ use App\Models\User;
 use LINE\LINEBot\MessageBuilder\TextMessageBuilder;
 use APP\LineFrend;
 use Illuminate\Http\Request;
+use Log;
  
 class LineApiController extends Controller
 {
@@ -24,7 +25,43 @@ class LineApiController extends Controller
     }
     // メッセージ送信用
     public function webhook(Request $request) {
-            return 'ok';
+                $input = $request->all();
+    // ユーザーがどういう操作を行った処理なのかを取得
+    $type  = $input['events'][0]['type'];
+
+    // タイプごとに分岐
+    switch ($type) {
+        // メッセージ受信
+        case 'message':
+            // メッセージ受信
+            break;
+
+        // 友だち追加 or ブロック解除
+        case 'follow':
+            Log::info("ユーザーが追加されました。");
+            break;
+
+        // グループ・トークルーム参加
+        case 'join':
+            Log::info("グループ・トークルームに追加されました。");
+            break;
+
+        // グループ・トークルーム退出
+        case 'leave':
+            Log::info("グループ・トークルームから退出させられました。");
+            break;
+
+        // ブロック
+        case 'unfollow':
+            Log::info("ユーザーにブロックされました。");
+            break;
+
+        default:
+            Log::info("the type is" . $type);
+            break;
+    }
+
+    return;
 
 }
 }
