@@ -48,6 +48,8 @@ class LineApiController extends Controller
             $reply=$bot->replyText($reply_token, $reply_message);
             
             return 'ok';
+            
+            response()->json(['return-data' => 'data'], 200);
         }
     }
 }
