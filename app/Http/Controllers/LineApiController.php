@@ -25,7 +25,7 @@ class LineApiController extends Controller
     }
     // メッセージ送信用
     public function webhook(Request $request) {
-                $input = $request->all();
+        $input = $request->all();
     // ユーザーがどういう操作を行った処理なのかを取得
     $type  = $input['events'][0]['type'];
 
@@ -33,12 +33,32 @@ class LineApiController extends Controller
     switch ($type) {
         // メッセージ受信
         case 'message':
-            // メッセージ受信
+            // 返答に必要なトークンを取得
+            $reply_token = $input['events'][0]['replyToken'];
+            // Lineに送信する準備
+            $http_client = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($this->access_token);
+            $bot         = new \LINE\LINEBot($http_client, ['channelSecret' => $this->channel_secret]);
+            // LINEの投稿処理
+            $message_data = "メッセージありがとうございます。ただいま準備中です";
+            $response     = $bot->replyText($reply_token, $message_data);
+
+            // Succeeded
+            if ($response->isSucceeded()) {
+                Log::info('返信成功');
+                break;
+            }
+            // Failed
+            Log::error($response->getRawBody());
+            break;
             break;
 
         // 友だち追加 or ブロック解除
         case 'follow':
-            Log::info("ユーザーが追加されました。");
+            // ユーザー固有のIDを取得
+            $mid = $request['events'][0]['source']['userId'];
+            // ユーザー固有のIDはどこかに保存しておいてください。メッセージ送信の際に必要です。
+            LineUser::updateOrCreate(['line_id' => $mid]);
+            Log::info("ユーザーを追加しました。 user_id = " . $mid);
             break;
 
         // グループ・トークルーム参加
