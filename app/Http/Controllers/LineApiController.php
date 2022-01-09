@@ -27,6 +27,5 @@ class LineApiController extends Controller
     public function webhook(Request $request) {
         // LINEから送られた内容を$inputsに代入
         $inputs=$request->all();
-        $type  = $input['events'][0]['type'];
     }
 }
