@@ -28,5 +28,39 @@ class LineApiController extends Controller
         // LINEから送られた内容を$inputsに代入
         $inputs=$request->all();
         $type  = $input['events'][0]['type'];
+        
+    // タイプごとに分岐
+    switch ($type) {
+        // メッセージ受信
+        case 'message':
+            // メッセージ受信
+            break;
+
+        // 友だち追加 or ブロック解除
+        case 'follow':
+            Log::info("ユーザーが追加されました。");
+            break;
+
+        // グループ・トークルーム参加
+        case 'join':
+            Log::info("グループ・トークルームに追加されました。");
+            break;
+
+        // グループ・トークルーム退出
+        case 'leave':
+            Log::info("グループ・トークルームから退出させられました。");
+            break;
+
+        // ブロック
+        case 'unfollow':
+            Log::info("ユーザーにブロックされました。");
+            break;
+
+        default:
+            Log::info("the type is" . $type);
+            break;
+    }
+
+    return;
     }
 }
