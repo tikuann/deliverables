@@ -17,7 +17,7 @@
                 @csrf
                 <div class='title'>
                     <h2>タイトル</h2>
-                    <textarea name="recipe[title]" placeholder="タイトル" rows="40" cols="40" value="{{ old('recipe.title') }}"></textarea>
+                    <textarea name="recipe[title]" placeholder="タイトル" rows="4" cols="40" value="{{ old('recipe.title') }}"></textarea>
                     <p class="title__error" style="color:red">{{ $errors->first('recipe.title') }}</p>
                 </div>
                 <div class='material'>
