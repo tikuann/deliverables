@@ -19,19 +19,19 @@
             @method('PUT')
             <div class='content__title'>
                 <h2>タイトル</h2>
-                <input type='text' name='recipe[title]' value="{{ $recipe->title }}">
+                <textarea name='recipe[title]' value="{{ $recipe->title }}">
             </div>
             <div class='content__material'>
                 <h2>材料</h2>
-                <input type='text' name='recipe[material]' value="{{ $recipe->material }}">
+                <textarea name='recipe[material]' value="{{ $recipe->material }}">
             </div>
             <div class="content__procedure">
                 <h4>手順</h4>
-                <input type='text' name='recipe[procedure]' value="{{ $recipe->procedure}}">
+                <textarea name='recipe[procedure]' value="{{ $recipe->procedure}}">
             </div>
             <div class="quote">
                 <h5>引用</h4>
-                <input type='text' name='quote[quote]' value="{{ $recipe->quote}}">
+                <input type='url' name='quote[quote]' value="{{ $recipe->quote}}">
             </div>
             <input type="submit" value="保存">
         </form>

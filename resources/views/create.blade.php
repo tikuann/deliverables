@@ -27,7 +27,7 @@
                 </div>
                 <div class='procedure'>
                     <h3>作り方</h3>
-                    <input type="textarea" name="recipe[procedure]" placeholder="作り方" value="{{ old('recipe.procedure') }}"/>
+                    <textarea name="recipe[procedure]" placeholder="作り方" value="{{ old('recipe.procedure') }}"/>
                     <p class="title__error" style="color:red">{{ $errors->first('recipe.procedure') }}</p>
                 </div>
                     <div class='quote'>
