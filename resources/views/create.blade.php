@@ -22,17 +22,17 @@
                 </div>
                 <div class='material'>
                     <h3>材料</h3>
-                    <input type="text" name="recipe[material]" placeholder="塩/n砂糖" value="{{ old('recipe.material') }}"/>
+                    <input type="textarea" name="recipe[material]" placeholder="材料" value="{{ old('recipe.material') }}"/>
                     <p class="title__error" style="color:red">{{ $errors->first('recipe.material') }}</p>
                 </div>
                 <div class='procedure'>
                     <h3>作り方</h3>
-                    <input type="text" name="recipe[procedure]" placeholder="作り方" value="{{ old('recipe.procedure') }}"/>
+                    <input type="textarea" name="recipe[procedure]" placeholder="作り方" value="{{ old('recipe.procedure') }}"/>
                     <p class="title__error" style="color:red">{{ $errors->first('recipe.procedure') }}</p>
                 </div>
                     <div class='quote'>
                     <h3>引用</h3>
-                    <input type="text" name="recipe[quote]" placeholder="引用" value="{{ old('recipe.quote') }}"/>
+                    <input type="url" name="recipe[quote]" placeholder="引用" value="{{ old('recipe.quote') }}"/>
                 <p class="title__error" style="color:red">{{ $errors->first('recipe.quote') }}</p>
                 </div> 
                 <h2>カテゴリー</h2>
