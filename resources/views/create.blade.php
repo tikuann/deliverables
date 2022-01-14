@@ -17,12 +17,12 @@
                 @csrf
                 <div class='title'>
                     <h2>タイトル</h2>
-                    <input type="text" name="recipe[title]" placeholder="タイトル" value="{{ old('recipe.title') }}">
+                    <input type="text" name="recipe[title]" placeholder="タイトル" cols="30" rows="10" value="{{ old('recipe.title') }}">
                     <p class="title__error" style="color:red">{{ $errors->first('recipe.title') }}</p>
                 </div>
                 <div class='material'>
                     <h3>材料</h3>
-                    <input type="textarea" name="recipe[material]" placeholder="材料" value="{{ old('recipe.material') }}"/>
+                    <input type="textarea" name="recipe[material]" placeholder="材料" cols="30" rows="10" value="{{ old('recipe.material') }}"/>
                     <p class="title__error" style="color:red">{{ $errors->first('recipe.material') }}</p>
                 </div>
                 <div class='procedure'>
