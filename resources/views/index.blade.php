@@ -14,6 +14,7 @@
         <header class="header">
             <h1>晩御飯、なんでもいいや..</h1>
             <ul class="main">
+            <li>[a href='https:/line.me/R/ti/p/@979ixxdx]</a></li>
             <li>[<a href='/recipe'>レシピ集はこちら！</a>]</li>
             </ul>
         </header>
