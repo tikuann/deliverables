@@ -23,11 +23,11 @@
             </div>
             <div class='content__material'>
                 <h2>材料</h2>
-                <textarea name='recipe[material]' rows="4" cols="40" value="{{ $recipe->material }}"></textarea>
+                <input type='text' name='recipe[material]' rows="4" cols="40" value="{{ $recipe->material }}">
             </div>
             <div class="content__procedure">
                 <h4>手順</h4>
-                <textarea name='recipe[procedure]' rows="4" cols="40" value="{{ $recipe->procedure}}"></textarea>
+                <input type='text' name='recipe[procedure]' rows="4" cols="40" value="{{ $recipe->procedure}}">
             </div>
             <div class="quote">
                 <h5>引用</h4>
